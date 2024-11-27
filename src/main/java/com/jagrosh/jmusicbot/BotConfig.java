@@ -359,9 +359,7 @@ public class BotConfig
     
     public boolean isTooLong(AudioTrack track)
     {
-        if(maxSeconds<=0)
-            return false;
-        return Math.round(track.getDuration()/1000.0) > maxSeconds;
+        return !maxSeconds<=0 || Math.round(track.getDuration()/1000.0) > maxSeconds;
     }
 
     public String[] getAliases(String command)
